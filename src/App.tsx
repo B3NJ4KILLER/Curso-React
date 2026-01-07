@@ -1,7 +1,7 @@
-import Titulo from "./Titulo";
+import Card from './components/card';
 
 function App() {
-  return <Titulo />;
+  return <Card />;
 }
 
 export default App;
