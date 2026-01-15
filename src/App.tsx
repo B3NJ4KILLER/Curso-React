@@ -12,6 +12,10 @@ function App() {
   // const handleSelect2 = (elemento: string) => {
   //   console.log("mostrando:", elemento);
   // };
+
+  const contenido = list.length !== 0 && (
+    <List data={list} onSelect={handleSelect} />
+  );
   return (
     <Card>
       {/* {"" && "string vacio"}
@@ -19,9 +23,10 @@ function App() {
       {null && "nulo"}
       {false && "falso"}
       {0 && "numero cero"} */}
-      {list.length !== 0 && "mi lista"}
+      {/* {list.length !== 0 && "mi lista"} */}
       <CardBody title="Hola Mundo" text="Este es el texto" />
-      <List data={list} onSelect={handleSelect} />
+      {contenido}
+      {/* <List data={list} onSelect={handleSelect} /> */}
       {/* <List data={list} onSelect={handleSelect2} /> */}
       {/* <List data={list} /> */}
     </Card>
