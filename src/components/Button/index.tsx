@@ -1,5 +1,15 @@
 import { ReactNode } from "react";
+import styled from "styled-components";
 import styles from "./Button.module.css";
+
+type BtnProps = {
+  isLoading: boolean;
+};
+
+const Btn = styled.button<BtnProps>`
+  background-color: ${(props) => (props.isLoading ? "gray" : "blue")};
+  padding: 25px 30px;
+`;
 
 type Props = {
   children: ReactNode;
@@ -25,20 +35,21 @@ function Button({ children, isLoading, onClick }: Props) {
   ].join(" ");
 
   return (
-    <button
+    <Btn
       // style={styles}
       onClick={onClick}
       disabled={isLoading}
+      isLoading={isLoading}
       type="button"
       // className={[styles.button, styles.padded].join(" ")}
       // className={[
       //   `btn btn-${isLoading ? "secondary" : "primary"}`,
       //   styles.padded,
       // ].join(" ")}
-      className={clasName}
+      // className={clasName}
     >
       {isLoading ? "Cargando..." : children}
-    </button>
+    </Btn>
   );
 }
 
